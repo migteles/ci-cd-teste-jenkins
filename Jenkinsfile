@@ -1,15 +1,21 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'nodejs'
+    }
+
     stages {
         stage('Instalação das dependencias') {
             steps {
+                echo 'Instalando node...'
                 bat 'npm install'
             }
         }
 
         stage('Execução dos testes') {
             steps {
+                echo 'Executando os testes...'
                 bat 'npm test'
             }
         }
