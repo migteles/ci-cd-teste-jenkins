@@ -10,9 +10,19 @@ pipeline {
         }
 
         stage('Execução dos testes') {
-            steps {
-                echo 'Executando os testes...'
-                bat 'npm test'
+            parallel {
+                stage('Testes no chrome') {
+                    steps {
+                        bat 'npx run test-chrome'
+                    }
+                }
+
+                stage('Testes no Electron') {
+                    steps {
+                        bat 'npx run test'
+                    }
+                }
+
             }
         }
     }
