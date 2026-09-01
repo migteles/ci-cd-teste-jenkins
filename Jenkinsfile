@@ -13,13 +13,13 @@ pipeline {
             parallel {
                 stage('Testes no chrome') {
                     steps {
-                        bat 'npm run test-chrome'
+                        bat 'npm run test-suite-1'
                     }
                 }
 
                 stage('Testes no Electron') {
                     steps {
-                        bat 'npm run test'
+                        bat 'npm run test-suite-2'
                     }
                 }
 
