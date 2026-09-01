@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run --browser electron",
-    "test-chrome": "npx cypress run --browser chrome"
+    "test-chrome": "npx cypress run --browser chrome",
+    "test-suite-1": "npx cypress run --spec cypress/e2e/1-getting-started/*"
   },
   "repository": {
     "type": "git",
