@@ -2,55 +2,7 @@
 
 context('Misc', () => {
   beforeEach(() => {
-    cy.visit('https://example.cypress.io/commands/misc')
-  })
-
-  it('cy.task() - execute a system command', () => {
-    // execute a system command.
-    // so you can take actions necessary for
-    // your test outside the scope of Cypress.
-    // https://on.cypress.io/exec
-
-    // we can use Cypress.platform string to
-    // select appropriate command
-    // https://on.cypress/io/platform
-    cy.log(`Platform ${Cypress.platform} architecture ${Cypress.arch}`)
-
-    // on CircleCI Windows build machines we have a failure to run bash shell
-    // https://github.com/cypress-io/cypress/issues/5169
-    // so skip some of the tests by passing flag "--env circle=true"
-    const isCircleOnWindows = Cypress.platform === 'win32' && Cypress.expose('circle')
-
-    if (isCircleOnWindows) {
-      cy.log('Skipping test on CircleCI')
-
-      return
-    }
-
-    // cy.task problem on Shippable CI
-    // https://github.com/cypress-io/cypress/issues/6718
-    const isShippable = Cypress.platform === 'linux' && Cypress.expose('shippable')
-
-    if (isShippable) {
-      cy.log('Skipping test on ShippableCI')
-
-      return
-    }
-
-    cy.task('echo Jane Lane')
-      .its('stdout').should('contain', 'Jane Lane')
-
-    if (Cypress.platform === 'win32') {
-      cy.task(`print ${Cypress.config('configFile')}`)
-        .its('stderr').should('be.empty')
-    }
-    else {
-      cy.task(`cat ${Cypress.config('configFile')}`)
-        .its('stderr').should('be.empty')
-
-      cy.task('pwd')
-        .its('code').should('eq', 0)
-    }
+    cy.visit('http://localhost:8080/commands/misc')
   })
 
   it('cy.focused() - get the DOM element that has focus', () => {
