@@ -19,5 +19,8 @@ jobs:
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm install
-    - run: npx cypress run
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Executar testes
+      run: npx cypress run
