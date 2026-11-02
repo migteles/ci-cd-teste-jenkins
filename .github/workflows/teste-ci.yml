@@ -23,4 +23,4 @@ jobs:
       run: npm install
 
     - name: Executar testes
-      run: npm test-chrome
+      run: npm run test-chrome
