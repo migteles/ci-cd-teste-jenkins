@@ -23,4 +23,10 @@ jobs:
       run: npm install
 
     - name: Executar testes
-      run: npm run test-chrome
+      run: npm test
+    
+    - name: Criar report Allure
+      run: npm report
+    
+    - name: Gerar resultados do report
+      run: npm report:generate
