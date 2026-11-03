@@ -2,7 +2,7 @@
 
 context('Misc', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/misc')
+    cy.visit('https://example.cypress.io/commands/misc')
   })
 
   it('cy.focused() - get the DOM element that has focus', () => {
