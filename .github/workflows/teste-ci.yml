@@ -26,7 +26,7 @@ jobs:
       run: npm test
     
     - name: Criar report Allure
-      run: npm report
+      run: npm run report
     
     - name: Gerar resultados do report
-      run: npm report:generate
+      run: npm run report:generate
