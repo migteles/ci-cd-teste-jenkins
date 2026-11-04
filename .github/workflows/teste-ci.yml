@@ -30,6 +30,3 @@ jobs:
     
     - name: Criar report Allure
       run: npm run report
-    
-    - name: Gerar resultados do report
-      run: npm run report:generate
